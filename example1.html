@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            h1{
+                color:red;
+                text-decoration:underline;
+            }
+        </style>
+        <script>
+             function one(string){
+                      document.getElementById("demo").innerText=string;
+                      document.getElementById("teja").innerHTML=string.length;
+             }
+             function two(string){
+                      document.getElementById("po1").innerText=string;
+                      document.getElementById("length").innerHTML=string.length;
+             }
+             function three(string){
+                      document.getElementById("sdf").innerText=string;
+                      document.getElementById("prasad").innerHTML=string.length;
+             }
+             function four(string){
+                      document.getElementById("spg").innerText=string;
+                      document.getElementById("mon").innerHTML=string.length;
+             }
+            </script>
+    </head>
+    <body>
+        <center>
+            <h1>Detials</h1>
+            <table  cellpadding=50px>
+                <tr>
+                <th><input type="text"  onkeyup="one(this.value)" placeholder="Enter Name"></th>
+                    <td><p id="demo" >?</p></td>
+                    <td><p id="teja">?</p></td>
+                     </tr>
+                <tr>
+                    <th><input type="number"  onkeyup="two(this.value)" placeholder="Mobile Number"></th>
+                    <td><p id="po1" >?</p></td>
+                    <td><p id="length">?</p></td>
+                    </tr>
+                    <tr>
+                        <th><textarea  onkeyup="three(this.value)" placeholder="Message"></textarea></th>
+                        <td><p id="sdf" >?</p></td>
+                        <td><p id="prasad">?</p></td>
+                        </tr>
+                        <tr>
+                            <th><textarea  onkeyup="four(this.value)" placeholder="address"></textarea></th>
+                            <td><p id="spg" >?</p></td>
+                            <td><p id="mon">?</p></td>
+                            </tr>
+                 </table>
+        </center>
+    </body>
+</html>

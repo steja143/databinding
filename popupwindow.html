@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+            var one=()=>{
+                alert("your email sent successfully!");
+            }
+
+            var two=()=>{
+                var a=confirm("are you sure?");
+               if(a==true){
+                   alert("please wait processing....");
+               }
+            }
+            var three=()=>{
+               var a= prompt("enter your mail id.......");
+               alert("the download link sent to "+a);
+            }
+        </script>
+    </head>
+    <body>
+           <h1>type of popup window in javascript</h1>
+           <button onclick="one()">Alert-click here</button>
+           <button onclick="two()">Confirm-click here</button>
+           <button onclick="three()">prompt-download file</button>
+    </body>
+</html>

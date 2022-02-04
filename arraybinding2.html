@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+               #nav{
+                   padding:10px;
+                   text-align:center;
+               }
+               #demo{
+                   width:80%;
+                    margin:auto;
+               }
+               button{
+                   background-color:red;
+                   padding:12px 20px 12px;
+                   cursor:pointer;
+                   margin:5px;
+                   color:white
+               }
+               button:hover{
+                   background-color:blue;
+               }
+               button:focus{
+                   background-color:green;
+               }
+               p{
+                   float:left;
+                   width:23%;
+                   text-align:center;
+                   margin:1%;
+                   border-bottom:10px solid orange;
+                   font-weight:bold;
+                   color:green;
+               }
+
+        </style>
+        <script>
+            var booklist=[];
+            function myFunction(){
+                var data="";
+                booklist.map((name,index)=>{
+                    data=data+"<p>"+index+" "+name+"</p>";
+                });
+                document.getElementById("demo").innerHTML=data.toUpperCase();
+                document.getElementById("total").innerText=booklist.length+"items";
+            }
+            function save(){
+                var bookname=prompt("enter your name"); 
+                booklist.push(bookname);
+                myFunction();
+            }
+            function item(){
+                var name=document.getElementById("p01").value;
+                booklist.unshift(name);
+                myFunction();
+                document.getElementById("p01").value="";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="nav">
+            <button onclick="save()">Add book</button>
+
+        <div>
+            Enter your Name:<input type="text" id="p01">
+            <button onclick="item()">save</button>
+        </div>
+        <h1 id="total">0  items</h1>
+        </div>
+        <div id="demo">items</div>
+
+    </body>
+</html>

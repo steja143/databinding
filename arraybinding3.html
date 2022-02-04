@@ -1,0 +1,55 @@
+<html>
+    <head>
+       <script>
+			var booklist=["Html", "CSS", "Bootstrap", "Javascript", "Java"];
+			
+			function getbook(){
+               var data="";
+                booklist.forEach((name,index)=>{
+                data=data+"<tr>";
+                 data=data+"<td>"+index+"</td>";
+                 data=data+"<td>"+name+"</td>";
+
+                 data=data+"<td><button onclick='delbook("+index+")'>delete</button></td>";
+
+                 data=data+"</tr>";
+               })
+            document.getElementById("allbook").innerHTML=data;
+				}
+                function delbook(index){
+                    var status=confirm("are you sur....");
+                    if(status==true){
+                        booklist.splice(index,1);
+                        getbook();
+                    }
+                }
+
+			function saveitem(){
+				var newname = document.getElementById("newbook").value;
+				booklist.unshift(newname); 
+				getbook();
+				document.getElementById("newbook").value="";
+			}
+       </script>
+    </head>
+    <body onload="getbook()">
+        <div align="center">
+            Enter item Name:<input type="text" id="newbook">
+            <button onclick="saveitem()">save</button>
+        </div>
+        <br>
+        <table align="center" cellpadding="10" width="600" border="1">
+            <thead>
+                <tr>
+                    <th>si no</th>
+                    <th>Book name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="allbook" align="center">
+
+            </tbody>
+
+        </table>
+    </body>
+</html>

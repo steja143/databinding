@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+        function one(){
+            var x=document.getElementById("n1").value;
+            var y=document.getElementById("n2").value;
+              x=parseInt(x);
+              y=parseInt(y);
+            var data="";
+            var data1="";
+            var sum=0;
+                    for(var i=x;i<=y;i++){
+                        if(i%2==0){
+                            data+= i+"<br>";
+                        }else{
+                            data1=data1+"<p>"+i+"</p>";
+                            sum=sum+i;
+                        }
+                        
+                    }
+                   
+                    document.getElementById("demo").innerHTML=data+"<br>"+data1+"<br>"+sum;
+                }
+                </script>
+    </head>
+    <body>
+        <h1>javascript data binding</h1>
+        <p>
+            Start of counter:<input type="text" id="n1"/>
+            End of counter  :<input type="text" id="n2"/>
+            <button onclick="one()">process</button>
+        </p>
+        <div id="demo">?</div>
+    </body>
+</html>

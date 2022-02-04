@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+               function one(){
+                   var fullname=document.getElementById("fname").value;
+                   alert(fullname);
+                   document.getElementById("myname").innerText=fullname;
+               }
+        </script>
+    </head>
+    <body>
+        <h1>javascript .value property example</h1>
+        <p>
+            Enter Name:<input type="text" id="fname"/>
+            <button onclick="one()">pick value</button>
+        </p>
+        <h2 id="myname">?</h2>
+    </body>
+</html>

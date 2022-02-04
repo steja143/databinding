@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+           function abc(string){
+               document.getElementById("message").innerText=string;
+               var pending=100-string.length;
+               document.getElementById("total").innerText=pending;
+             
+           }
+        </script>
+     </head>
+    <body>
+           <center>
+               <h1>javascript & html2 ways event based data binking</h1>
+               <textarea onkeyup="abc(this.value)" maxlength="100" rows="10" cols="70"></textarea>
+               <p> 
+                   <label id="total">100</label>is left out of 100 character
+                </p>
+               <p id="message"></p>
+           </center>
+    </body>
+</html> 

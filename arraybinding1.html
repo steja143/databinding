@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h1>Get dat from array</h1>
+        <button onclick="one()">Go&get array element</button>
+        <br/><br/>
+        <div id="demo">no items</div>
+        <script>
+            function one(){
+                var item=["apple","mango","orange","graphs"];
+                var data="<h2>Item list</h2>";
+                item.forEach((name,index)=>{
+                        data+="<p>"+index+" . "+name+"</p>";
+                })
+                document.getElementById("demo").innerHTML=data;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+       <script>
+           var one=(input)=>{
+               alert("you have entered:"+input);
+           }
+
+       </script>
+    </head>
+    <body onload="one('welcome back........')">
+        <h1>keyboard events example</h1>
+       <p>
+        on key press:<input type="text" value="apple" onkeypress="one(this.value)"  />
+       </p>
+    
+       <p>
+        on key press:<input type="text" value="apple" onkeydown="one(this.value)"  />
+       </p>
+       <p>
+        on key press:<input type="text" value="apple" onkeyup="one(this.value)"  />
+       </p>
+       <p>
+        on key press:<input type="text" value="apple"  onfocus="one(this.value)"/>
+       </p>
+       <p>
+        on key press:<input type="text" value="apple"  onblur="one(this.value)"/>
+       </p>
+
+    </body>
+</html>

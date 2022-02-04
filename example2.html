@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <center>
+        <p>
+            <input type="text" onkeyup="one(this.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="demo">?</span>
+            <span id="the">?</span>
+        </p>
+        <p>
+            <input type="text" onkeyup="one(this.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="po1">?</span>
+            <span id="btg">?</span>
+        </p>
+        <p>
+            <input type="text" onkeyup="one(this.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="sdg">?</span>
+            <span id="taj">?</span>
+        </p>
+        <p>
+            <input type="text" onkeyup="one(this.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="sdf">?</span>
+            <span id="dfg">?</span>
+        </p>
+        </center>
+        <script>
+            function one(){
+                document.getElementById("demo").innerText=str;
+                document.getElementById("the").innerText=str.length;
+                document.getElementById("po1").innerText=str;
+                document.getElementById("btg").innerText=str.length;
+                document.getElementById("sdg").innerText=str;
+                document.getElementById("taj").innerText=str.length;
+                document.getElementById("sdf").innerText=str;
+                document.getElementById("dfg").innerText=str.length;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+            var text=[
+                {name:"teja",last:"prasad",detalis:"chittoor"},
+                {name:"bala",last:"krishna",detalis:"chittoor"},
+                {name:"hari",last:"prasad",detalis:"chittoor"}
+             ];
+             function myFunction(){
+                 var txt=document.getElementById("demo").value;
+                  var plk={name:txt,last:[],detalis:[]}
+               text.unshift(plk);
+                 lucky();
+                 document.getElementById("demo").value="";
+            }
+            function lucky(){
+                var data=" ";
+                text.map((info,index)=>{
+                    data+=info.name+" ";
+                });
+                document.getElementById("sdf").innerHTML=data;
+            }
+
+        </script>
+    </head>
+    <body onload="myFunction()">
+        <div align="center">
+            <input type="text" id="demo">
+            <button onclick="myFunction()">click me</button>
+        </div>
+        <p id="sdf"></p>
+        <p>-------------------------------------------</p>
+        <p>
+            <input type="text" id="p01">
+            <button onclick="myFunction()">click me</button>
+            <p id="demo"></p>
+        </p>
+        <script>
+            function myFunction(){
+            var name=document.getElementById("p01").value;
+            if(name=="tejaprasad"){
+            document.getElementById("demo").innerHTML=https://www.w3schools.com/js/;
+        }
+    }
+        </script>
+    </body>
+</html>

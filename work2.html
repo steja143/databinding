@@ -1,0 +1,66 @@
+<html>
+    <style>
+               button{
+                   width:80px;
+                   padding:8px;
+                   color:white;
+                   background-color:red;
+                   font-weight:bold;
+                   border:none;
+                   cursor:poniter;
+               }
+               p{
+                  float:left;
+                   padding:1%;
+                   width:15%;
+                   text-align:center;
+                   margin:1%;
+                   font-weight:bold;
+                   color:green;
+                   border:3px solid blue;
+                   border-radius:20px;
+                   box-shadow:0px 0px 5px 5px blue;
+                   padding:10px;
+               }
+               .ready{
+                   color:white;
+                   background-color:red;
+               }
+    </style>
+    <body>
+        <div align="center">
+        <input type="text" id="demo">
+        <input type="button" class="ready" onclick="item()" value="save"/>
+        </div>
+        <div id="sdf"></div>
+        <script>
+            var text=[];
+            function myFunction(){
+                var data="";
+                text.map((name,index)=>{
+                    data+="<p>"+name+"<br><br><span><button onclick='sdg("+index+")'>delete</button></span>"+"</p>";
+                });
+                document.getElementById("sdf").innerHTML=data;
+            }
+            function item(){
+                var name=document.getElementById("demo").value;
+                if(name==""){
+                    alert("please enter any information");
+                }else if(isNaN(name)){
+                     text.unshift(name);
+                }else{
+                    alert("please enter any alphabets");
+                }
+                myFunction();
+                document.getElementById("demo").value="";
+            }
+            function sdg(index){
+               var status=confirm("are you sur to delete");
+               if(status==true){
+                   text.splice(index,1);
+                   myFunction();
+               }
+            }
+        </script>
+    </body>
+</html>

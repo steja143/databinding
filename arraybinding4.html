@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script>
+            var booklist=[
+                {name:"java",price:500,details:"goodbook"},
+                {name:"javascript",price:200,details:"best book"},
+                {name:"python",price:500,details:"better book"},
+                {name:"angular",price:600,details:"read this book"}
+            ];
+        function getbook(){
+            var data="";
+            booklist.map((bookinfo,index)=>{
+                data+="<tr>";
+                data+="<td>"+index+"</td>";
+                data+="<td>"+bookinfo.name+"</td>";
+                data+="<td>"+bookinfo.price+"</td>";
+                data+="<td>"+bookinfo.details+"</td>";
+                data+="<td><button onclick='deletebook("+index+")'>delete</button></td>";
+                data+="</tr>";
+            })
+            document.getElementById("allbook").innerHTML=data;
+            document.getElementById("total").innerText=booklist.length;
+        }
+        function save(){
+            var newtext=document.getElementById("newitem").value;
+            var newrange=document.getElementById("newprice").value;
+            var newinform=document.getElementById("newdetails").value;
+          var newbook= {name:newtext,price:newrange,details:newinform};
+          //booklist=booklist.concat(newbook);//to add at end of array
+          booklist.unshift(newbook);
+          getbook();//to reload the booklist
+          document.getElementById("newitem").value="";
+             document.getElementById("newprice").value="";
+            document.getElementById("newdetails").value="";
+        document.getElementById("message").innerText="bookadded";
+        //to clear all input field
+        }
+        
+        function deletebook(index){
+            booklist.splice(index,1);
+            getbook();
+            document.getElementById("message").innerText="bookdeleted";
+        }
+    </script>
+
+    </head>
+    <body onload="getbook()">
+        <p align="center" id="message">?</p>
+        <table align="left" cellpadding="10" border="1">
+            <caption><h2>ADD ITEM</h2></caption>
+            <tr>
+                <th>item name</th>
+                <td><input type="text" id="newitem"/></td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td><input type="number" id="newprice"/></td>
+            </tr>
+            <tr>
+                <th>item details</th>
+                <td><textarea id="newdetails" rows="5" cols="20"></textarea></td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button onclick="save()">save item</button>
+                </th>
+            </tr>
+        </table>
+        <table align="right" cellpadding="10" border="1">
+            <thead>
+                <tr bgcolor="orange">
+                    <th>si no</th>
+                    <th>book name</th>
+                    <th>book price</th>
+                    <th>About Book</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="allbook">
+
+            </tbody>
+        </table>
+        <h1 id="total" align="center">0</h1>
+    </body>
+
+</html>

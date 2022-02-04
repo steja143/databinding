@@ -1,0 +1,76 @@
+<html>
+        <head>
+            <style>
+                #nav{
+                    text-align:center;
+                    padding:10px;
+                }
+                #sdf{
+                    width:80%;
+                    margin:auto;
+                }
+                button{
+                    background-color:red;
+                    padding:10px;
+                    padding:12px 20px 12px;
+                    border:none;
+                    color:white;
+                    border-radius:10px;
+                }
+                button:hover{
+                    background-color:green;
+                    color:white;
+                }
+                button:focus{
+                    background-color:orange;
+                }
+                button:active{
+                    background-color:blue;
+                }
+                button:link{
+                    background-color:#bebebe;
+                }
+                 p{
+                     float:left;
+                     text-align:center;
+                     margin:1%;
+                     border-bottom:30px solid orange;
+                     font-weight:bold;
+                     width:23%;
+                 }
+            </style>
+            <script>
+                var booklist=["java","javascript","python","php","css","html"];
+                   function myFunction1(){
+                       var data="";
+                       booklist.map((name,index)=>{
+                           data=data+"<p>"+name+"</p>";
+                       });
+                       document.getElementById("sdf").innerHTML=data;
+                       document.getElementById("p01").innerHTML=booklist.length+ " "+"items";
+                   }
+                   function myAdd(){
+                       var name=prompt("enter your name");
+                       booklist.push(name);
+                       myFunction1();
+                   }
+                   function save(){
+                       var moon=document.getElementById("demo").value;
+                       booklist.unshift(moon);
+                       myFunction1();
+                   }
+            </script>
+        </head>
+        <body>
+            <div id="nav">
+            <button onclick="myAdd()">try it</button>
+            <button onclick="myFunction1()">try it</button>
+            <div>
+                Enter your name:<input type="text" id="demo"/>
+                <button onclick="save()">save</button>
+        </div>
+        <h1 id="p01">0 items</h1>
+           </div>
+           <div id="sdf">no items</div>
+    </body>
+</html>

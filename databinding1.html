@@ -1,0 +1,26 @@
+<html>
+    <head>
+           <script>
+                var data="<h1>welcome js</h1><p>your too good</p>working....";
+                var one=function(){
+                      document.getElementById("container").innerText=data;
+                }
+                function two(){
+                    document.getElementById("demo").innerHTML=data;
+                }
+                function there(){
+                    document.getElementById("demo").innerHTML=data;
+                }
+        </script>
+    </head>
+    <body>
+           <h1>javascript innertext and innerHTML example</h1>
+           <button onclick="one()">innertext</button>
+           <button onclick="two()">innerHTML</button>
+           <button onclick="there()">example</button>
+           <br><br>
+           <div id="container"></div>
+           <p id="demo">
+           </p>
+    </body>
+</html>

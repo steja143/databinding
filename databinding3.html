@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function one(){
+                var fullname=document.getElementById("demo").value;
+                document.getElementById("fname").innerText=fullname;
+                document.getElementById("total").innerText=fullname.length;
+            }
+        </script>
+    </head>
+    <body>
+           <h1>javascript innerTEXT and innerHTML example</h1>
+           <p>
+               Enter name:<input type="text" id="demo" onkeypress="one()">
+           </p>
+           <h2 id="fname">?</h2>
+           <p id="total">0</p>
+    </body>
+</html>

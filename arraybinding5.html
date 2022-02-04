@@ -1,0 +1,118 @@
+<html>
+    <head>
+      <style>
+        ul{
+              margin:50px;
+              padding:15px;
+              background:orange;
+              text-align:center;
+        }
+        ul li{
+          display:inline;
+          padding:16px 25px 16px;
+          color:green;
+          font-weight:bold;
+          cursor:pointer;
+        }
+        ul li:hover{
+          background:yellow;
+        }
+        #productlist{
+          width:50%;
+          margin:auto;
+          min-height:300px;
+          margin-top:30px;
+          padding:30px;
+          box-shadow:0px 10px 30px grey;
+        }
+        p{
+          font-weight:bold;
+          color:green;
+          text-transform:uppercase
+           }
+           p:before{
+             content:"->";
+             color:red
+           }
+      </style>
+        <script>
+              var itemlist=[
+                  {
+                    cat:"books",
+                    products:["java","angular","php","python","sql"]
+                  },
+                  {
+                    cat:"food",
+                    products:["rice","bags","fruits","banana"]
+                  },
+                  {
+                  cat:"laptop",
+                  products:["dell","intel","wipro","HP"]
+                  }
+              ];
+              function getCat(){
+                var catlist="";
+                itemlist.map((item,index)=>{
+                  catlist+="<li onclick='getproduct("+index+")'>"+item.cat+"</li>";
+                });
+                document.getElementById("container").innerHTML=catlist;
+              }
+              function getproduct(index=0){
+              var prodata="<h3>available products:"+" "+ itemlist[index].products.length+"</h3>";
+              itemlist[index].products.map((name,index)=>{
+                prodata+="<p>"+name+"</p>";
+              });
+              document.getElementById("productlist").innerHTML=prodata;
+           }
+        function myFunction(){
+          var newcat =document.getElementById("newcat").value;
+         if(newcat==""){
+          alert("enter your details");
+         }else if(isNaN(newcat)){
+          var txt={cat:newcat,products:[]};
+          itemlist=itemlist.concat(txt);
+         }else{
+           alert("enter any alphabets");
+         }
+          document.getElementById("newcat").value="";
+          getCat();
+        }
+        function two(){
+          var newproduct=document.getElementById("newproduct").value;
+          if(newproduct==""){
+          alert("enter your details");
+         }else if(isNaN(newproduct)){
+          var pos=prompt("enter position  name:");
+          var txt=prompt("enter the number");
+          itemlist[pos].products.push(newproduct);
+         }else{
+           alert("enter any alphabets");
+         }
+          document.getElementById("newproduct").value="";
+          getproduct();
+        }
+        function three(){
+          localStorage.removeItem("newcat");
+          getCate();
+        }
+        </script>
+    </head>
+    <body onload="getCat(),getproduct()">
+            <ul id="container">0</ul>
+            <center>
+              <p>
+                Enter Category Name:<input type="text" id="newcat"/>
+                <button onclick="myFunction()">add category</button>
+                <button onclick="three()">delete</button>
+              </p>
+              <p>
+                Enter product Name:<input type="text" id="newproduct"/>
+                <button onclick="two()">add product</button>
+                <button onclick="four()">delete</button>
+              </p>
+            </center>
+            <div id="productlist">
+             
+            </div>
+    </body>
+</html>

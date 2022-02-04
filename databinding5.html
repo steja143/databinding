@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+          function one(){
+              var a=document.getElementById("fname").value;
+              var b=document.getElementById("age").value;
+              var c=document.getElementById("number").value;
+              document.getElementById("showname").innerText= "hi"+" "+a;
+              document.getElementById("showage").innerText=b+" "+"years old";
+              document.getElementById("showmobile").innerText=c+" "+"number";
+
+          }
+        </script>
+     </head>
+    <body>
+           <center>
+               <h1>javascript & html2 ways event based data binking</h1>
+               <p>enter name:<input ytpe="text" id="fname"></p>
+               <p>Enter age:<input type="text" id="age"></p>
+               <p>Enter mobile:<input type="number" id="number"></p>
+               <p><button onclick="one()">go</button></p>
+               <p id="showname">?</p>
+               <p id="showage">?</p>
+               <p id="showmobile">?</p>
+           </center>
+    </body>
+</html> 
